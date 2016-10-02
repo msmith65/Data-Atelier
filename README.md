@@ -1,3 +1,3 @@
 # Data-Atelier
 
-# This repository will serve as a workspace of data mining, machine learning, and coding experimentation 
+# This repository will serve as a workspace for data mining, machine learning, and coding experimentation 
