@@ -57,7 +57,6 @@ Old_Prospects_Overlap = Model_Filtered[Model_Filtered["ID"].isin(Prospects_to_Re
 #Making Sure the Merge Worked as Expected
 Merge_Check = Old_Prospects_Overlap[~Old_Prospects_Overlap["ID"].isin(Prospects_to_Remove_3["ID"])]
 
-
 #Group New Prospects and write to CSV
 New_Prospects.groupby(["Zip Code (group)","Gift Capacity Rating","State", "ZIP","Major Gift Score","ID"]).size().to_frame().to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\Grouped.csv')
 
