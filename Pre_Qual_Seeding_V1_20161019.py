@@ -1,8 +1,7 @@
 
 #Import Packages
 import pandas as pd
-import numpy as np
-import sklearn as sk
+
 
 #Change Display Settings
 pd.set_option("display.max_columns",200)
@@ -49,23 +48,79 @@ Prospects_to_Remove_3=Prospects_to_Remove_2.drop_duplicates("ID")
 Overlap = pd.merge(Prior_Duplicates,Existing_Opportunity,how='inner',left_on="ID",right_on="ID")
 
 #Removing Previously Old Prospects 
-New_Prospects = Model_Filtered[~Model_Filtered["ID"].isin(Prospects_to_Remove["ID"])]
+New_Prospects = Model_Filtered[~Model_Filtered["ID"].isin(Prospects_to_Remove["ID"])].sort_values(by="Major Gift Score",ascending=0)
 
-#Old Prospects That Were Removed  
-Old_Prospects_Overlap = Model_Filtered[Model_Filtered["ID"].isin(Prospects_to_Remove["ID"])]
+# Old Prospects That Were Removed  
+Old_Prospects_Overlap= Model_Filtered[Model_Filtered["ID"].isin(Prospects_to_Remove["ID"])]
 
 #Making Sure the Merge Worked as Expected
 Merge_Check = Old_Prospects_Overlap[~Old_Prospects_Overlap["ID"].isin(Prospects_to_Remove_3["ID"])]
 
 #Group New Prospects and write to CSV
-New_Prospects.groupby(["Zip Code (group)","Gift Capacity Rating","State", "ZIP","Major Gift Score","ID"]).size().to_frame().to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\Grouped.csv')
+Grouped = New_Prospects.groupby(["Zip Code (group)"])
 
-#Writing New Prospects to CSV
+# Groups to Dataframes
+
+BN = Grouped.get_group("BN")
+
+ES = Grouped.get_group("ES")
+
+GL = Grouped.get_group("GL")
+
+GP = Grouped.get_group("GP")
+
+IL = Grouped.get_group("IL")
+
+MA = Grouped.get_group("MA")
+
+NE = Grouped.get_group("NE")
+
+NENY = Grouped.get_group("NE and NY")
+
+NW = Grouped.get_group("NW")
+
+NY = Grouped.get_group("NY")
+
+PA = Grouped.get_group("PA")
+
+PO = Grouped.get_group("PO")
+
+RI = Grouped.get_group("RI")
+
+SC = Grouped.get_group("SC")
+
+SE = Grouped.get_group("SE")
+
+SO = Grouped.get_group("SO")
+
+SW = Grouped.get_group("SW")
+
+WR = Grouped.get_group("WR")
+
+NY_Regions = [NE,NY,NENY] 
+
+NY_Region =pd.concat(NY_Regions)
+
+# Top 100 NYC Region and Random Sample
+
+NY_Region_Top100 = NY_Region[:100]
+
+NY_Region_Random_Jerry = NY_Region_Top100.sample(n=50)
+
+NY_Region_Random_Mimi = NY_Region_Top100[~NY_Region_Top100["ID"].isin(NY_Region_Random_Jerry["ID"])]
+
+#Write DataFrames to CSV
 New_Prospects.to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\New_Prospects.csv')
 
-#Writing Old Prospects That Were Removed to CSV
 Old_Prospects_Overlap.to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\Removed_Prospects.csv')
 
+Frames = [BN,ES,GL,GP,IL,MA,NW,PA,PO,RI,SC,SE,SO,SW,WR,NY_Region_Random_Jerry,NY_Region_Random_Mimi]
 
-
-
+def save_xls(list_dfs, xls_path):
+    writer = pd.ExcelWriter(xls_path)
+    for n, df in enumerate(list_dfs):
+        df.to_excel(writer,'sheet%s' % n)
+    writer.save()
+    
+save_xls(Frames,'S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\Prospects_For_Seeding.xlsx')    
+    
