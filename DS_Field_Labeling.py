@@ -20,7 +20,7 @@ New_Headers = {'AGE':'WE.GCAGEUSED','P2G Score Combo':'WE.P2GCOMBO','P2G Descrip
 'P2G Score (first digit)':'WE.P2GSCORE','P2G Score (second digit)':'WE.P2GSCORE2','Total Assets':'WE.ASSETRANGE',
 'Total Asset Rating':'WE.ASSETRATING','Net Worth':'WE.NETWORTHRANGE','Net Worth Rating':'WE.NETWORTHRATING',
 'Cash on Hand':'WE.LIQUIDITYRANGE','Cash on Hand Rating':'WE.LIQUIDITYRATING','Estimated Annual Donations':'WE.EADRANGE',
-'Est. Annual Donations Rating':'WE.EADRATING','Gift Capacity Range':'WE.GCGIFTRANGE','Gift Capacity Rating':'WE.GCGIFTRATING',
+'Est. Annual Donations Rating':'WE.EADRATING','Gift Capacity Range':'WE.GIVINGCAPACITYRANGE','Gift Capacity Rating':'WE.GIVINGCAPACITYRATING',
 'Gift Capacity - Income':'WE.GCINCOMERANGE','Gift Capacity - Real Estate':'WE.GCREALESTATERANGE','Gift Capacity - Stock':'WE.GCSTOCKSRANGE',
 'Gift Capacity - Pension':'WE.GCPENSIONRATING','Gift Capacity - Donations':'WE.GCGIVINGUSED','Estimated Gift Capacity':'WE.CAPACITY',
 'Influence Rating':'WE.INFLUENCERATING','Inclination: Affiliation':'WE.INCLINATIONAFF','Inclination: Giving':'WE.INCLINATIONGIV',
@@ -62,6 +62,8 @@ Screened_Prospects_Short =  Screened_Prospects[Prospect_Columns_5]
 
 Prospects_Short_Transposed = Screened_Prospects_Short.T
 
-With_Headers = pd.merge(Prospects_Short_Transposed,Full_Headers,how='left',left_index=True, right_on=0).set_index(0).T.set_index("OriginalID")
+With_Headers = pd.merge(Prospects_Short_Transposed,Full_Headers,how='left',left_index=True, right_on=0).set_index(0).T
 
-With_Headers.to_csv('C:\Users\charles.wiles\Desktop\Headers_3.csv')
+With_Headers.set_index("OriginalID")
+
+With_Headers.to_csv('C:\Users\charles.wiles\Desktop\Headers_5.csv')
