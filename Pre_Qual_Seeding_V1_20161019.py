@@ -120,6 +120,12 @@ PO = PO.nlargest(50,"Major Gift Score")
 EC_RI = Grouped.get_group("EC and RI")
 EC_RI = EC_RI.nlargest(100,"Major Gift Score")
 
+EC = EC_RI.nlargest(20,"Major Gift Score")
+EC["Primary Sol Code"]=EC["Primary Sol Code"].map({"EC and RI":"EC"})
+
+RI = EC_RI.nsmallest(80,"Major Gift Score")
+RI["Primary Sol Code"]=RI["Primary Sol Code"].map({"EC and RI":"RI"})
+
 SC = Grouped.get_group("SC")
 SC = SC.nlargest(50,"Major Gift Score")
 
@@ -140,14 +146,18 @@ NY_Region_Top50 = NY_Region[:50]
 
 NY_Region_Random_Jerry = NY_Region_Top50.sample(n=25)
 
+NY_Region_Random_Jerry["Primary Sol Code"]=NY_Region_Random_Jerry["Primary Sol Code"].map({"NE and NY":"NE"})
+
 NY_Region_Random_Mimi = NY_Region_Top50[~NY_Region_Top50["ID"].isin(NY_Region_Random_Jerry["ID"])]
+
+NY_Region_Random_Mimi["Primary Sol Code"]=NY_Region_Random_Mimi["Primary Sol Code"].map({"NE and NY":"NY"})
 
 #Write DataFrames to CSV
 New_Prospects.to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\New_Prospects.csv')
 
 Old_Prospects_Overlap.to_csv('S:\CG ANALYTICS\Wealth Screening\WealthEngine\May 2016 Screening Return\Top 50 List\Removed_Prospects.csv')
 
-Frames = [BN,CI,ES,GL,GP,IL,LA,NE,NY,PA,PO,EC_RI,SC,SE,SW,WR,NY_Region_Random_Jerry,NY_Region_Random_Mimi]
+Frames = [BN,CI,ES,GL,GP,IL,LA,NE,NY,PA,PO,EC,RI,SC,SE,SW,WR,NY_Region_Random_Jerry,NY_Region_Random_Mimi]
 
 def save_xls(list_dfs, xls_path):
     writer = pd.ExcelWriter(xls_path)
