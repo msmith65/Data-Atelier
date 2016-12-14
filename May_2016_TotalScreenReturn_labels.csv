@@ -1,0 +1,79 @@
+Research Category Code,Description ,Research Source Code
+WE.GCAGEUSED,Age,WE
+WE.P2GCOMBO,P2G Score,WE
+WE.P2GDESC,P2G Description,WE
+WE.P2GSCORE,P2G Score1,WE
+WE.P2GSCORE2,P2G Score2,WE
+WE.ASSETRANGE,Total Assets Range,WE
+WE.ASSETRATING,Total Assets Rating,WE
+WE.NETWORTHRANGE,Net Worth Range,WE
+WE.NETWORTHRATING,Net Worth Rating,WE
+WE.LIQUIDITYRANGE,Cash on Hand Range,WE
+WE.LIQUIDITYRATING,Cash on Hand Rating,WE
+WE.EADRANGE,Estimated Annual Donations Range,WE
+WE.EADRATING,Estimated Annual Donations Rating,WE
+WE.GIVINGCAPACITYRANGE,Giving Capacity Range,WE
+WE.GIVINGCAPACITYRATING,Giving Capacity Rating,WE
+WE.GCINCOMERANGE,Giving Capacity Income Range,WE
+WE.GCREALESTATERANGE,Giving Capacity Real Estate Range,WE
+WE.GCSTOCKSRANGE,Giving Capacity Stocks Range,WE
+WE.GCPENSIONRATING,Giving Capacity Pension Rating,WE
+WE.GCGIVINGUSED,"Giving FEC, NPO",WE
+WE.CAPACITY,Estimated Giving Capacity,WE
+WE.INFLUENCERATING,Influence,WE
+WE.INCLINATIONAFF,Inclination Affiliation,WE
+WE.INCLINATIONGIV,Inclination Giving,WE
+WE.BEQUEST,Bequest,WE
+WE.ANNUITY,Annuity,WE
+WE.TRUST,Trust,WE
+WE.INCOMERANGE,Income Range,WE
+WE.INCOMERATING,Income Rating,WE
+WE.PENSIONSRANGE,Pensions Range,WE
+WE.PENSIONSRATING,Pensions Rating,WE
+WE.GCREALESTATEUSED,Real Estate Value,WE
+WE.REALESTATEVALUERATING,Real Estate Value Rating,WE
+WE.REALESTATECOUNT,Property Count,WE
+WE.DIRECTSTOCKRANGE,Direct Stock Holdings Range,WE
+WE.DIRECTSTOCKRATING,Direct Stock Holdings Rating,WE
+WE.TOTALSTOCKRANGE,Total Stock Value Range,WE
+WE.TOTALSTOCKRATING,Total Stock Value Rating,WE
+WE.NPOGIVERANGE,Charitable Donations Range,WE
+WE.NPOGIVERATING,Charitable Donations Rating,WE
+WE.POLTOTRANGE,Political Donations Range,WE
+WE.POLTOTRATING,Political Donations Rating,WE
+WE.DONTOTRANGE,Total Donations Range,WE
+WE.DONTOTRATING,Total Donations Rating,WE
+WE.DBCOMPANYVALUERANGE,D&B Company Value Range,WE
+WE.DBCOMPANYVALUERATING,D&B Company Value Rating,WE
+WE.BSNSSALESVOLUMERANGE,Business Sales Volume Range,WE
+WE.BSNSSALESVOLRATING,Business Sales Volume Rating,WE
+WE.AIRCRAFTOWNER,Aircraft Owner,WE
+WE.BOATOWNER,Boat Owner,WE
+WE.ICMATCHFLAG,Inner Circle Match,WE
+WE.ICFLAG,Inner Circle Flag,WE
+WE.CDQOM,Major Donor List,WE
+WE.BOARDMEMBER,Board Member,WE
+WE.AIRQOM2,Aircraft QOM,WE
+WE.AMENQOM2,Airmen QOM,WE
+WE.DBQOM2,Dun & Bradstreet QOM,WE
+WE.DNMQOM2,National Do Not Mail Registry QOM,WE
+WE.DONQOM2,Charitable Donations Database QOM,WE
+WE.FECQOM2,Federal Election Campaign QOM,WE
+WE.GSFDNQOM2,Guidestar Foundations QOM,WE
+WE.GSQOM2,Guidestar Directors QOM,WE
+WE.HPROFQOM2,Household Profile QOM,WE
+WE.HVRQOM2,Hoover's QOM,WE
+WE.MDQOM2,Major Donor QOM,WE
+WE.MEDQOM2,National Physicians Profiles QOM,WE
+WE.MGQOM2,Market Guide QOM,WE
+WE.PDIRQOM2,Section 527 Pl Directors QOM,WE
+WE.POLOQOM2,Section 527 Pol Org QOM,WE
+WE.PENQOM2,Pension QOM,WE
+WE.PHILQOM2,Philanthropic Donations QOM,WE
+WE.REALESTQOM2,Real Estate QOM,WE
+WE.SPDQOM2,State Political Donations QOM,WE
+WE.SSDMQOM2,SSA Death Index QOM,WE
+WE.STOCKQOM2,Wealth ID Securities QOM,WE
+WE.TRUSTQOM2,Foundation Trustees QOM,WE
+WE.VDSQOM2,Merchant Vessels QOM,WE
+WE.WWQOM2,Marquis Who's Who QOM,WE
