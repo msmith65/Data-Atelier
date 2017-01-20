@@ -3,7 +3,6 @@
 Created on Mon Nov 28 12:15:42 2016
 
 @author: matthew.smith
-         ted.wiles   
 """
 
 import numpy as np
@@ -43,11 +42,11 @@ df = df[['#ID', 'Lastgift', 'Maxgift', 'Totalgifts', 'Totalpayamount', 'Firstgif
 print(df.isnull().any(), '\n')
 
 # Change First Gift Date to Ordinal 
-first_gift_ordinal = (pd.to_datetime(df[ 'Firstgiftdate'])).map(dt.datetime.toordinal)
+df['Firstgiftdate']= (pd.to_datetime(df['Firstgiftdate'])).map(dt.datetime.toordinal)
 
 # Split between X and y
 
-df_X = df[['Lastgift', 'Maxgift', 'Totalgifts', 'Totalpayamount', 'Firstgift']]
+df_X = df[['Lastgift', 'Maxgift', 'Totalgifts', 'Totalpayamount', 'Firstgift','Firstgiftdate']]
 
 df_y = df[['Mail?']]
 
