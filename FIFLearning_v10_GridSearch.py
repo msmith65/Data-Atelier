@@ -44,10 +44,11 @@ print(df.isnull().any(), '\n')
 # Change First Gift Date and Last Gift Date to Ordinal 
 df['Firstgiftdate']= (pd.to_datetime(df['Firstgiftdate'])).map(dt.datetime.toordinal)
 df['Lastgiftdate'] = (pd.to_datetime(df['Lastgiftdate'])).map(dt.datetime.toordinal)
+df['Maxgiftdate'] = (pd.to_datetime(df['Maxgiftdate'])).map(dt.datetime.toordinal)
 
 # Split between X and y
 
-df_X = df[['Lastgift', 'Maxgift', 'Totalgifts', 'Totalpayamount', 'Firstgift','Firstgiftdate','Lastgiftdate']]
+df_X = df[['Lastgift','Maxgift','Totalgifts','Totalpayamount','Firstgift','Firstgiftdate','Lastgiftdate','Maxgiftdate']]
 
 df_y = df[['Mail?']]
 
